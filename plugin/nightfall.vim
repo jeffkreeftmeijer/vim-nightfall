@@ -5,3 +5,8 @@ function UpdateBackground()
     if &bg == "dark" | set bg=light | endif
   endif 
 endfunction
+
+augroup nightfall
+  autocmd!
+  autocmd FocusGained,BufEnter * call UpdateBackground()
+augroup END
